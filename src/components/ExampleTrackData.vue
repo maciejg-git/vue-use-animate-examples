@@ -21,27 +21,34 @@ onMounted(() => {
       elements.value.forEach((element, index) => {
         track.update(index * 300);
         if (track.frameIndex === 0) {
+          track.$x = track.progress
           element.style.transform = translateX(track.progress, "px")
         }
         if (track.frameIndex === 1) {
-          element.style.transform = rotate(track.progress, "deg")
+          track.$rotation = track.progress
+          element.style.transform = 
+            translateX(track.$x, "px") + 
+            rotate(track.progress, "deg")
         }
         if (track.frameIndex === 2) {
-          element.style.transform = scale(track.progress, track.progress)
+          element.style.transform = 
+            translateX(track.$x, "px") + 
+            rotate(track.$rotation, "deg") + 
+            scale(track.progress, track.progress)
         }
       })
       if (track.isAllComplete()) track.next()
     },
     frames: [
       [
-        { duration: 1500, timing: easing.easeOutBounce, remap: [0, 200] },
-        { duration: 700, timing: easing.easeInOutQuad, remap: [0, 180] },
-        { duration: 500, timing: easing.easeInOutQuad, remap: [1, 0.5] },
+        { duration: 700, timing: easing.easeInOutQuad, remap: [0, 200] },
+        { duration: 400, timing: easing.easeInOutQuad, remap: [0, 180] },
+        { duration: 400, timing: easing.easeInOutQuad, remap: [1, 0.5] },
       ]
     ],
   });
 /* CUT END */
 });
 
-defineExpose({ name: "exampleMultipleFrames", animate });
+defineExpose({ name: "exampleTrackData", animate });
 </script>

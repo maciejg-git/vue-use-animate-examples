@@ -80,19 +80,34 @@
       <example-multiple-frames :ref="addExample"></example-multiple-frames>
     </div>
     <div class="text-gray-300">
-      Track can have a number of frames that are played in sequence. To advance to the next frame call the next function of the track anywhere in the draw function. During next draw call new frame wil be used to update track progress. 
+      Track can have a number of frames that are played in sequence. To advance to the next frame call the next function of the track anywhere in the draw function. During next draw call new frame wil be used to update track progress. The index of the current frame is stored in the frameIndex property of the track object.
     </div>
     <div class="text-gray-300 mt-4">
       While you can call next frame anytime there are two helpers that can be used to check if the progress for current frame has finished before advancing.
     </div>
     <div class="text-gray-300 mt-4">
-      isComplete() will check if current timeFraction computed in the last track update is equal to 1 or 0 for reversed frames.
+      isComplete() will check if current timeFraction computed in the last track update is equal to 1 (or 0 for reversed frames).
     </div>
     <div class="text-gray-300 mt-4">
-      isAllComplete() will check if all timeFractions computed in the track update during current draw were equal to 1 or 0 for reversed frames.
+      isAllComplete() will check if all timeFractions computed in the track update during current draw were equal to 1 (or 0 for reversed frames).
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleMultipleFrames"></description>
+</div>
+
+<h5 class="ml-12">
+  Track data
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example" @click="examples.exampleTrackData.restart()">
+      <example-track-data :ref="addExample"></example-track-data>
+    </div>
+    <div class="text-gray-300">
+      To get current progress of the animation update function of the track object is used. The progress is stored in timeFraction property. This value is always between 0 and 1.
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleTrackData"></description>
 </div>
 
 <div class="flex mx-6">

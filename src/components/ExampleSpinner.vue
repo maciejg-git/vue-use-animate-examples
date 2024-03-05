@@ -23,19 +23,17 @@ onMounted(() => {
     draw: ([track, track2]) => {
       if (track.frameStarted) {
         track.frame.duration = animate.getRandomInt(600, 1400);
-        track.$from = track.$to % 360 || 0;
-        track.$deg = animate.getRandomInt(270, 480);
+        let from = track.$to % 360 || 0;
         // track.$to = track.frame._cycles % 2 ? track.$from + track.$deg : track.$from - track.$deg
-        track.$to = track.$from + track.$deg;
-        track.remap = [track.$from, track.$to];
+        track.$to = from + animate.getRandomInt(270, 480);
+        track.remap = [from, track.$to];
       }
       if (track2.frameStarted) {
         track2.frame.duration = animate.getRandomInt(600, 1400);
-        track2.$from = track2.$to % 360 || 0;
-        track2.$deg = animate.getRandomInt(270, 480);
+        let from = track2.$to % 360 || 0;
         // track2.$to = track2.frame._cycles % 2 ? track2.$from + track2.$deg : track2.$from - track2.$deg
-        track2.$to = track2.$from + track2.$deg;
-        track2.remap = [track2.$from, track2.$to];
+        track2.$to = from + animate.getRandomInt(270, 480);
+        track2.remap = [from, track2.$to];
       }
       track.update();
       if (track.frameIndex === 0) {
