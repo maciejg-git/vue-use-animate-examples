@@ -1,4 +1,5 @@
 <template>
+  <div class="sticky flex items-center top-0 px-12 h-12 text-xl text-gray-300 font-bold shadow-lg bg-[#212121] z-50">vue-use-animate examples</div>
   <!-- <div class="flex h-[400px] flex-col"> -->
   <!--   <div -->
   <!--     v-for="box in 10" -->
@@ -20,7 +21,7 @@
       <example-track-update :ref="addExample"></example-track-update>
     </div>
     <div class="text-gray-300">
-      To get current progress of the animation update function of the track object is used. The progress is stored in timeFraction property. This value is always between 0 and 1.
+      <example-track-update-md></example-track-update-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleTrackUpdate"></description>
@@ -35,7 +36,7 @@
       <example-track-update-progress :ref="addExample"></example-track-update-progress>
     </div>
     <div class="text-gray-300">
-     Another way of getting progress after update is the progress property of the track object. By default this value is equal to the value of the timeFraction. However progress property is modified by the easing function and the remap property if these are set.
+      <example-track-update-progress-md></example-track-update-progress-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleTrackUpdateProgress"></description>
@@ -50,7 +51,7 @@
       <example-track-update-delay :ref="addExample"></example-track-update-delay>
     </div>
     <div class="text-gray-300">
-      Update function can be called with a number in the argument that defines number of miliseconds of delay before timeFraction and progress starts.
+      <example-track-update-delay-md></example-track-update-delay-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleTrackUpdateDelay"></description>
@@ -65,7 +66,7 @@
       <example-track-update-multiple :ref="addExample"></example-track-update-multiple>
     </div>
     <div class="text-gray-300">
-      Update function can be called multiple times during single draw. This can be useful for animations that animate multiple elements with different settings.
+      <example-track-update-multiple-md></example-track-update-multiple-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleTrackUpdateMultiple"></description>
@@ -80,16 +81,7 @@
       <example-multiple-frames :ref="addExample"></example-multiple-frames>
     </div>
     <div class="text-gray-300">
-      Track can have a number of frames that are played in sequence. To advance to the next frame call the next function of the track anywhere in the draw function. During next draw call new frame wil be used to update track progress. The index of the current frame is stored in the frameIndex property of the track object.
-    </div>
-    <div class="text-gray-300 mt-4">
-      While you can call next frame anytime there are two helpers that can be used to check if the progress for current frame has finished before advancing.
-    </div>
-    <div class="text-gray-300 mt-4">
-      isComplete() will check if current timeFraction computed in the last track update is equal to 1 (or 0 for reversed frames).
-    </div>
-    <div class="text-gray-300 mt-4">
-      isAllComplete() will check if all timeFractions computed in the track update during current draw were equal to 1 (or 0 for reversed frames).
+      <example-multiple-frames-md></example-multiple-frames-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleMultipleFrames"></description>
@@ -104,10 +96,44 @@
       <example-track-data :ref="addExample"></example-track-data>
     </div>
     <div class="text-gray-300">
-      To get current progress of the animation update function of the track object is used. The progress is stored in timeFraction property. This value is always between 0 and 1.
+      <example-track-data-md></example-track-data-md>
     </div>
   </div>
   <description class="basis-1/2 px-6" name="ExampleTrackData"></description>
+</div>
+
+<h4 class="ml-12">
+  Animation
+</h4>
+
+<h5 class="ml-12">
+  Animation repeat
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example" @click="examples.exampleAnimationRepeat.restart()">
+      <example-animation-repeat :ref="addExample"></example-animation-repeat>
+    </div>
+    <div class="text-gray-300">
+      <example-animation-repeat-md></example-animation-repeat-md>
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleAnimationRepeat"></description>
+</div>
+
+<h5 class="ml-12">
+  Animation controls
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example">
+      <example-animation-controls :ref="addExample"></example-animation-controls>
+    </div>
+    <div class="text-gray-300">
+      <example-animation-controls-md></example-animation-controls-md>
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleAnimationControls"></description>
 </div>
 
 <div class="flex mx-6">
