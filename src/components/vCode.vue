@@ -1,5 +1,5 @@
 <template>
-  <pre class="relative rounded-md overflow-hidden">
+  <pre class="rounded-md overflow-hidden">
     <code ref="codeEl" class="code" :class="'language-' + language">{{ code }}</code>
   </pre>
 </template>
