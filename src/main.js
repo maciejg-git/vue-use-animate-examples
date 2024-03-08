@@ -24,4 +24,11 @@ for (const path in examples) {
   app.component(file, defineAsyncComponent(examples[path]))
 }
 
+const examplesMd = import.meta.glob('./components/markdown/*.md')
+for (const path in examplesMd) {
+  let file = path.replace(/^.*[\\\/]/, '')
+  file = file.substring(0, file.lastIndexOf('.'))
+  app.component(file + "Md", defineAsyncComponent(examplesMd[path]))
+}
+
 app.mount('#app')
