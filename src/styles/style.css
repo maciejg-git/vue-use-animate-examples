@@ -10,3 +10,11 @@ h5 {
 h6 {
   @apply text-lg font-semibold dark:text-gray-200 scroll-mt-20 mt-4 mb-4;
 }
+
+.markdown-body code {
+  @apply text-red-600 dark:text-yellow-600 font-semibold text-sm
+}
+
+.markdown-body p {
+  @apply mb-4
+}
