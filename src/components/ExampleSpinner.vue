@@ -24,25 +24,23 @@ onMounted(() => {
       if (track.frameStarted) {
         track.frame.duration = animate.getRandomInt(600, 1400);
         let from = track.$to % 360 || 0;
-        // track.$to = track.frame._cycles % 2 ? track.$from + track.$deg : track.$from - track.$deg
+        // track.$to = track.frame.cycles % 2 ? track.$from + track.$deg : track.$from - track.$deg
         track.$to = from + animate.getRandomInt(270, 480);
         track.remap = [from, track.$to];
       }
       if (track2.frameStarted) {
         track2.frame.duration = animate.getRandomInt(600, 1400);
         let from = track2.$to % 360 || 0;
-        // track2.$to = track2.frame._cycles % 2 ? track2.$from + track2.$deg : track2.$from - track2.$deg
+        // track2.$to = track2.frame.cycles % 2 ? track2.$from + track2.$deg : track2.$from - track2.$deg
         track2.$to = from + animate.getRandomInt(270, 480);
         track2.remap = [from, track2.$to];
       }
       track.update();
-      if (track.frameIndex === 0) {
-        spinnerframe.value.style.transform = rotate(track.progress, "deg");
-      }
+      spinnerframe.value.style.transform = rotate(track.progress, "deg");
+
       track2.update();
-      if (track2.frameIndex === 0) {
-        spinnerframe2.value.style.transform = rotate(track2.progress, "deg");
-      }
+      spinnerframe2.value.style.transform = rotate(track2.progress, "deg");
+
       if (track.isAllComplete()) track.next();
       if (track2.isAllComplete()) track2.next();
     },

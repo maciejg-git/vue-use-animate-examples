@@ -34,9 +34,9 @@ onMounted(() => {
     },
     frames: [
       [
-        { duration: 1500, timing: easing.easeOutBounce, remap: [0, 200] },
-        { duration: 700, timing: easing.easeInOutQuad, remap: [0, 180] },
-        { duration: 500, timing: easing.easeInOutQuad, remap: [1, 0.5] },
+        { duration: 1000, timing: easing.easeOutBounce, remap: [0, 200] },
+        { duration: 400, timing: easing.easeInOutQuad, remap: [0, 180] },
+        { duration: 400, timing: easing.easeInOutQuad, remap: [1, 0.5] },
       ]
     ],
   });
