@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "unplugin-vue-markdown": "^0.26.0",
     "vue": "^3.3.10"
   },
   "devDependencies": {
