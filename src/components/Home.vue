@@ -13,7 +13,7 @@
 </h4>
   
 <h5 class="ml-12">
-  Track timeFraction property
+  timeFraction property
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
@@ -28,7 +28,7 @@
 </div>
 
 <h5 class="ml-12">
-  Track progress property
+  progress property
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
@@ -43,7 +43,7 @@
 </div>
 
 <h5 class="ml-12">
-  Track update delay
+  Update delay
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
@@ -58,7 +58,22 @@
 </div>
 
 <h5 class="ml-12">
-  Track update multiple calls
+  Reversed progress
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example" @click="examples.exampleTrackUpdateReverse.restart()">
+      <example-track-update-reverse :ref="addExample"></example-track-update-reverse>
+    </div>
+    <div class="text-gray-300">
+      <example-track-update-reverse-md></example-track-update-reverse-md>
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleTrackUpdateReverse"></description>
+</div>
+
+<h5 class="ml-12">
+  Multiple update calls
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
@@ -73,7 +88,7 @@
 </div>
 
 <h5 class="ml-12">
-  Track frames
+  Multiple frames
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
@@ -88,7 +103,7 @@
 </div>
 
 <h5 class="ml-12">
-  Track data
+  Storing and sharing data
 </h5>
 <div class="flex mx-6">
   <div class="basis-1/2 px-6">
