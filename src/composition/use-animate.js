@@ -2,7 +2,6 @@ let remap = (v, range) => (v * (range[1] - range[0])) / 1 + range[0];
 let clamp = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
 let steps = (t, s) =>
   Math.ceil(Math.min(Math.max(t, 0.000001), 1) * s) * (1 / s);
-let promise = (i) => new Promise((res) => (i.resolve = res));
 let getRandomInt = (min, max) => Math.random() * (max - min) + min 
 
 let defaultAnimationEvents = {
