@@ -37,9 +37,12 @@ onMounted(() => {
 
       if (track.frameIndex === 0) {
         element.value.style.transform = translateX(track.progress, "px");
+        track.$x = track.progress
       }
       if (track.frameIndex === 1) {
-        element.value.style.transform = rotate(track.progress, "deg");
+        element.value.style.transform = 
+          translateX(track.$x, "px") + 
+          rotate(track.progress, "deg");
       }
 
       if (track.isComplete()) track.next()
@@ -47,7 +50,7 @@ onMounted(() => {
     frames: [
       [
         { duration: 1000, timing: easing.easeInOutQuad, remap: [0, 200] },
-        { duration: 1000, timing: easing.easeInOutQuad, remap: [0, 180] },
+        { duration: 800, timing: easing.easeInOutQuad, remap: [0, 180] },
       ]
     ],
     repeat: true,

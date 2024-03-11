@@ -1,8 +1,5 @@
 <template>
-  <div ref="box" class="h-10 w-10 bg-gray-400"></div>
-  <select v-model="currentEasing" class="ml-auto">
-    <option v-for="f in easing" :value="f">{{ f.name }}</option>
-  </select>
+  <div ref="element" class="h-10 w-10 bg-gray-400"></div>
 </template>
 
 <script setup>
@@ -11,9 +8,7 @@ import useAnimate from "../composition/use-animate";
 import * as easing from "../easing";
 import { translateX } from "../transforms.js";
 
-let box = ref(null);
-
-let currentEasing = ref(easing.linear)
+let element = ref(null);
 
 let animate = useAnimate();
 
@@ -21,15 +16,12 @@ onMounted(() => {
 /* CUT START */
   animate.set({
     draw: ([track]) => {
-      track.setTiming(currentEasing.value)
       track.update();
-      box.value.style.transform = translateX(track.progress, "px");
-      if (track.isComplete()) track.next()
+      element.value.style.transform = translateX(track.progress, "px");
     },
     frames: [
-      [{ duration: 2000, remap: [0, 200] }]
+      [{ duration: 1000, timing: easing.easeOutBack, remap: [0, 200] }]
     ],
-    repeat: true,
   });
 /* CUT END */
 });

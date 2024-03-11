@@ -29,7 +29,7 @@ onMounted(() => {
       if (track.isComplete()) track.next()
     },
     frames: [
-      [{ duration: 1000, timing: easing.easeInQuad, remap: [0, 200], alternate: true }]
+      [{ duration: 1000, timing: easing.linear, remap: [0, 200], alternate: true }]
     ],
     repeat: true,
   });
