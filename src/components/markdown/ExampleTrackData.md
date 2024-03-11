@@ -1,1 +1,1 @@
-To store and share any data between draw calls attach it to the track objects with the $ prefix.
+To store and share data between draw calls attach it to the track objects with the $ prefix. In this example state of the animation from previous frames is stored and then used in the following frames to make transform property.
