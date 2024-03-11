@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <div ref="box" class="h-10 w-10 bg-gray-400"></div>
-    <div class="flex my-4 gap-x-2">
+    <div class="flex mt-4 gap-x-2">
       <button class="btn" @click="animate.play()">play</button>
       <button class="btn" @click="animate.stop()">stop</button>
       <button class="btn" @click="animate.pause()">paused</button>
@@ -41,6 +41,6 @@ defineExpose({ name: "exampleAnimationControls", animate });
 
 <style scoped>
 .btn {
-  @apply text-gray-400 underline py-1 px-4 rounded-md mr-2 font-semibold hover:border-gray-300 hover:text-gray-300
+  @apply text-gray-400 underline py-1 pr-4 rounded-md mr-2 font-semibold hover:border-gray-300 hover:text-gray-300
 }
 </style>

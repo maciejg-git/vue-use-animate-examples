@@ -1,5 +1,5 @@
 <template>
-  <div ref="box" class="absolute h-10 w-10 bg-gray-400"></div>
+  <div ref="box" class="h-10 w-10 bg-gray-400"></div>
 </template>
 
 <script setup>

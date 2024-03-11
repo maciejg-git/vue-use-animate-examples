@@ -117,6 +117,36 @@
   <description class="basis-1/2 px-6" name="ExampleTrackData"></description>
 </div>
 
+<h5 class="ml-12">
+  Easing functions
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example" @click="examples.exampleEasing.restart()">
+      <example-easing :ref="addExample"></example-easing>
+    </div>
+    <div class="text-gray-300">
+      <example-track-update-md></example-track-update-md>
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleEasing"></description>
+</div>
+
+<h5 class="ml-12">
+  Animation and track events
+</h5>
+<div class="flex mx-6">
+  <div class="basis-1/2 px-6">
+    <div class="example" @click="examples.exampleEvents.restart()">
+      <example-events :ref="addExample"></example-events>
+    </div>
+    <div class="text-gray-300">
+      <example-events-md></example-events-md>
+    </div>
+  </div>
+  <description class="basis-1/2 px-6" name="ExampleEvents"></description>
+</div>
+
 <h4 class="ml-12">
   Animation
 </h4>
@@ -357,6 +387,6 @@ let setRandom = (min, max) => {
 
 <style scoped>
 .example {
-  @apply h-[100px] border-b dark:border-neutral-700 py-10 my-6 flex items-center
+  @apply border-b dark:border-neutral-700 py-5 my-6 flex items-center
 }
 </style>
