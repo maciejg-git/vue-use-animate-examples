@@ -18,3 +18,7 @@ h6 {
 .markdown-body p {
   @apply mb-4
 }
+
+.markdown-body ul {
+  @apply list-disc list-inside
+}
