@@ -201,33 +201,36 @@
         name="ExampleAnimationControls"
       ></description>
     </div>
-    
+
+    <h5 class="ml-12">Spinner example</h5>
     <div class="mx-6 flex">
       <div class="basis-1/2 px-6">
         <div class="example" @click="examples.exampleSpinnerDots.restart()">
           <example-spinner-dots :ref="addExample"></example-spinner-dots>
         </div>
-        <div class="text-gray-300">text</div>
+        <div class="text-gray-300"></div>
       </div>
       <description class="basis-1/2 px-6" name="ExampleSpinnerDots"></description>
     </div>
     
+    <h5 class="ml-12">Spinner example 2</h5>
     <div class="mx-6 flex">
       <div class="basis-1/2 px-6">
         <div class="example" @click="examples.exampleSpinner.restart()">
           <example-spinner :ref="addExample"></example-spinner>
         </div>
-        <div class="text-gray-300">text</div>
+        <div class="text-gray-300"></div>
       </div>
       <description class="basis-1/2 px-6" name="ExampleSpinner"></description>
     </div>
     
+    <h5 class="ml-12">Spinner example 3</h5>
     <div class="mx-6 flex">
       <div class="basis-1/2 px-6">
         <div class="example" @click="examples.exampleBars.restart()">
           <example-bars :ref="addExample"></example-bars>
         </div>
-        <div class="text-gray-300">text</div>
+        <div class="text-gray-300"></div>
       </div>
       <description class="basis-1/2 px-6" name="ExampleBars"></description>
     </div>
