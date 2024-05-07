@@ -1,7 +1,7 @@
 <template>
   <div v-if="templateCode || scriptCode">
-    <v-code :code="templateCode" template language="html"></v-code>
-    <v-code :code="scriptCode" script language="javascript"></v-code>
+    <higlighted-code :code="templateCode" template language="html"></higlighted-code>
+    <higlighted-code :code="scriptCode" script language="javascript"></higlighted-code>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ let cutTemplateRegexp = /^.*<!-- CUT START -->([\s\S]*?)<!-- CUT END -->/gm;
 let cutScriptRegexp = /^.*\/\* CUT START \*\/[\r\n]+([\s\S]*?)\/\* CUT END \*\//m;
 let isCodeVisible = ref(props.autoShowCode);
 
-import(`./${props.name}.vue?raw`).then((i) => {
+import(`./Examples/${props.name}.vue?raw`).then((i) => {
   templateCode.value = i.default.match(templateRegexp);
   scriptCode.value = i.default.match(scriptRegexp);
 
