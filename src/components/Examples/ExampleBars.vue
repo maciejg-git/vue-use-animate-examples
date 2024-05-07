@@ -10,9 +10,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import useAnimate from "../composition/use-animate";
-import * as easing from "../easing";
-import { scaleY } from "../transforms.js";
+import useAnimate from "@/composition/use-animate";
+import * as easing from "@/easing";
+import { scaleY } from "@/transforms.js";
 
 let bars = ref([]);
 

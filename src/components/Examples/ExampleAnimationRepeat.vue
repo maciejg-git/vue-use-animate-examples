@@ -4,9 +4,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import useAnimate from "../composition/use-animate";
-import * as easing from "../easing";
-import { translateX } from "../transforms.js";
+import useAnimate from "@/composition/use-animate";
+import * as easing from "@/easing";
+import { translateX } from "@/transforms.js";
 
 let box = ref(null);
 
@@ -16,15 +16,17 @@ onMounted(() => {
 /* CUT START */
   animate.set({
     draw: ([track]) => {
-      track.update(1000);
+      track.update();
       box.value.style.transform = translateX(track.progress, "px");
+      if (track.isComplete()) track.next()
     },
     frames: [
-      [{ duration: 1000, remap: [0, 200] }]
+      [{ duration: 1000, timing: easing.easeOutQuad, remap: [0, 200] }]
     ],
+    repeat: true,
   });
 /* CUT END */
 });
 
-defineExpose({ name: "exampleTrackUpdateDelay", animate });
+defineExpose({ name: "exampleAnimationRepeat", animate });
 </script>

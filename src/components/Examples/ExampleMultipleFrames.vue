@@ -6,9 +6,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import useAnimate from "../composition/use-animate";
-import * as easing from "../easing";
-import { translateX, rotate, scale } from "../transforms.js";
+import useAnimate from "@/composition/use-animate";
+import * as easing from "@/easing";
+import { translateX, rotate, scale } from "@/transforms.js";
 
 let elements = ref([]);
 
@@ -21,27 +21,20 @@ onMounted(() => {
       elements.value.forEach((element, index) => {
         track.update(index * 300);
         if (track.frameIndex === 0) {
-          track.$x = track.progress
           element.style.transform = translateX(track.progress, "px")
         }
         if (track.frameIndex === 1) {
-          track.$rotation = track.progress
-          element.style.transform = 
-            translateX(track.$x, "px") + 
-            rotate(track.progress, "deg")
+          element.style.transform = rotate(track.progress, "deg")
         }
         if (track.frameIndex === 2) {
-          element.style.transform = 
-            translateX(track.$x, "px") + 
-            rotate(track.$rotation, "deg") + 
-            scale(track.progress, track.progress)
+          element.style.transform = scale(track.progress, track.progress)
         }
       })
       if (track.isAllComplete()) track.next()
     },
     frames: [
       [
-        { duration: 700, timing: easing.easeInOutQuad, remap: [0, 200] },
+        { duration: 1000, timing: easing.easeOutBounce, remap: [0, 200] },
         { duration: 400, timing: easing.easeInOutQuad, remap: [0, 180] },
         { duration: 400, timing: easing.easeInOutQuad, remap: [1, 0.5] },
       ]
@@ -50,5 +43,5 @@ onMounted(() => {
 /* CUT END */
 });
 
-defineExpose({ name: "exampleTrackData", animate });
+defineExpose({ name: "exampleMultipleFrames", animate });
 </script>

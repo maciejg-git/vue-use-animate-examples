@@ -6,9 +6,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import useAnimate from "../composition/use-animate";
-import * as easing from "../easing";
-import { translateX } from "../transforms.js";
+import useAnimate from "@/composition/use-animate";
+import * as easing from "@/easing";
+import { translateX } from "@/transforms.js";
 
 let elements = ref(null);
 

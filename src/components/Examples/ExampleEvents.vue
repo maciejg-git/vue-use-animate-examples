@@ -9,9 +9,9 @@
 
 <script setup>
 import { ref, onMounted, reactive } from "vue";
-import useAnimate from "../composition/use-animate";
-import * as easing from "../easing";
-import { translateX, rotate } from "../transforms.js";
+import useAnimate from "@/composition/use-animate";
+import * as easing from "@/easing";
+import { translateX, rotate } from "@/transforms.js";
 
 let element = ref(null);
 
